@@ -19,7 +19,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (response.body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, response.body.weather[0].description + ' It is currently ' + response.body.main.temp + ' degress out. There is a ' + response.body.main.humidity + '% chance of rain and wind speed ' + response.body.wind.speed)
+            callback(undefined, response.body.weather[0].description + ' It is currently ' + response.body.main.temp + ' degress out. This is high today is ' + response.body.main.temp_max + ' with a low of '+ response.body.main.temp_min +'. There is a ' + response.body.main.humidity + '% chance of rain and wind speed ' + response.body.wind.speed + '. cloud coverage is ' + response.body.clouds.all)
         }
 
     })
